@@ -1,0 +1,34 @@
+
+
+<script>
+
+  				//	OCULTAR O MOTRAR CONTENIDOS SEGUN FECHA Y HORA
+  				
+  				var hoy = new Date();
+  				console.log(hoy);
+  				//var fecha = new Date(2020,4,3,13);
+
+  				function mostrar (a, m, d, h, min, id){
+
+  					var fecha = new Date(a,m,d,h,min);
+
+  				    if (hoy>fecha) {
+  				        var objeto = document.querySelector(id);
+  				        objeto.classList.remove('hidden');
+  				        console.log("mostrar "+id);
+
+  				    } else {
+  				        console.log(id+" permanece oculto")
+  				    }
+  				}
+
+    // MODO REVISION
+    var revisar = window.location["search"];
+    if (revisar === '?revisar') {
+        var ocultos = document.querySelectorAll(".hidden");
+        console.log('modo revision');
+        for(o of ocultos){
+            o.classList.remove('hidden');
+        }
+    }
+</script>
